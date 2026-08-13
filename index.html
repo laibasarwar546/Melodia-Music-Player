@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Melodia — Spotify inspired music player powered by iTunes">
+
+    <meta name="theme-color"
+          content="#121212">
+
+    <title>Melodia — Music Player</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">♫</span>
+            <span>Melodia</span>
+        </div>
+
+        <nav class="main-nav">
+
+            <button class="nav-item active"
+                    data-section="home"
+                    type="button">
+                <span class="nav-icon">⌂</span>
+                <span>Home</span>
+            </button>
+
+            <button class="nav-item"
+                    data-section="search"
+                    type="button">
+                <span class="nav-icon">⌕</span>
+                <span>Search</span>
+            </button>
+
+            <button class="nav-item"
+                    data-section="library"
+                    type="button">
+                <span class="nav-icon">▣</span>
+                <span>Your Library</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-section">
+
+            <p class="sidebar-title">
+                YOUR MUSIC
+            </p>
+
+            <button class="sidebar-link"
+                    data-playlist="liked"
+                    type="button">
+                <span>♡</span>
+                Liked Songs
+            </button>
+
+            <button class="sidebar-link"
+                    data-playlist="recent"
+                    type="button">
+                <span>◷</span>
+                Recently Played
+            </button>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <div class="mini-note">
+
+                <div class="mini-note-icon">
+                    ♫
+                </div>
+
+                <div>
+                    <strong>Melodia</strong>
+
+                    <small>
+                        Your personal music space
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="top-bar">
+
+            <div class="navigation-buttons">
+
+                <button class="round-btn"
+                        id="backBtn"
+                        type="button">
+                    ‹
+                </button>
+
+                <button class="round-btn"
+                        id="forwardBtn"
+                        type="button">
+                    ›
+                </button>
+
+            </div>
+
+            <div class="top-search">
+
+                <span class="search-icon">
+                    ⌕
+                </span>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="What do you want to play?"
+                    autocomplete="off"
+                    aria-label="Search music">
+
+                <button
+                    class="clear-search"
+                    id="clearSearchBtn"
+                    type="button">
+                    ×
+                </button>
+
+            </div>
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button">
+                ☀️
+            </button>
+
+        </header>
+
+
+        <!-- =====================================================
+             HOME
+        ====================================================== -->
+
+        <section id="homeSection"
+                 class="content-section active-section">
+
+            <!-- HERO -->
+
+            <div class="hero">
+
+                <div class="hero-glow"></div>
+
+                <div class="hero-content">
+
+                    <span class="hero-badge">
+                        ✦ YOUR MUSIC SPACE
+                    </span>
+
+                    <h1>
+                        Find your
+                        <span>favorite sound.</span>
+                    </h1>
+
+                    <p>
+                        Search songs and artists, listen to previews,
+                        build your library and enjoy your music.
+                    </p>
+
+                    <button
+                        class="primary-btn"
+                        id="heroPlayBtn"
+                        type="button">
+
+                        <span>▶</span>
+                        Start Listening
+
+                    </button>
+
+                </div>
+
+                <div class="hero-decoration">
+
+                    <div class="hero-disc">
+                        <div class="disc-center">
+                            ♫
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOW PLAYING -->
+
+            <section class="now-playing-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-kicker">
+                            CURRENTLY PLAYING
+                        </span>
+
+                        <h2>
+                            Now Playing
+                        </h2>
+
+                    </div>
+
+                    <span class="live-badge"
+                          id="liveBadge">
+                        <span></span>
+                        PREVIEW
+                    </span>
+
+                </div>
+
+
+                <div class="now-playing-card">
+
+                    <div class="now-playing-art">
+
+                        <img
+                            id="bigPlayerCover"
+                            src=""
+                            alt="Album artwork">
+
+                        <div class="art-overlay">
+                            <span>♫</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="now-playing-info">
+
+                        <span class="now-label">
+                            NOW PLAYING
+                        </span>
+
+                        <h2 id="bigPlayerTitle">
+                            Select a song
+                        </h2>
+
+                        <p id="bigPlayerArtist">
+                            Search for a song or artist
+                        </p>
+
+                        <p class="big-player-album"
+                           id="bigPlayerAlbum">
+                            —
+                        </p>
+
+
+                        <div class="big-progress">
+
+                            <div class="big-time-row">
+
+                                <span id="bigCurrentTime">
+                                    0:00
+                                </span>
+
+                                <span id="bigDuration">
+                                    0:00
+                                </span>
+
+                            </div>
+
+                            <div
+                                class="big-progress-track"
+                                id="bigProgressTrack">
+
+                                <div
+                                    class="big-progress-fill"
+                                    id="bigProgressFill">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECENT -->
+
+            <section class="music-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-kicker">
+                            YOUR HISTORY
+                        </span>
+
+                        <h2>
+                            Recently Played
+                        </h2>
+
+                    </div>
+
+                    <button
+                        class="show-all-btn"
+                        data-show="recent"
+                        type="button">
+                        Show all →
+                    </button>
+
+                </div>
+
+                <div class="song-grid"
+                     id="recentSongs">
+                </div>
+
+            </section>
+
+
+            <!-- POPULAR -->
+
+            <section class="music-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-kicker">
+                            DISCOVER
+                        </span>
+
+                        <h2>
+                            Popular Songs
+                        </h2>
+
+                    </div>
+
+                    <button
+                        class="show-all-btn"
+                        data-show="popular"
+                        type="button">
+                        Show all →
+                    </button>
+
+                </div>
+
+                <div class="song-grid"
+                     id="popularSongs">
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- =====================================================
+             SEARCH
+        ====================================================== -->
+
+        <section id="searchSection"
+                 class="content-section">
+
+            <div class="page-header">
+
+                <span class="section-kicker">
+                    EXPLORE MUSIC
+                </span>
+
+                <h1>Search</h1>
+
+                <p>
+                    Find songs and artists.
+                </p>
+
+            </div>
+
+            <div class="search-status"
+                 id="searchStatus">
+                Search for a song or artist to begin.
+            </div>
+
+            <div class="search-results"
+                 id="searchResults">
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             LIBRARY
+        ====================================================== -->
+
+        <section id="librarySection"
+                 class="content-section">
+
+            <div class="page-header">
+
+                <span class="section-kicker">
+                    YOUR COLLECTION
+                </span>
+
+                <h1>
+                    Your Library
+                </h1>
+
+                <p>
+                    Your liked songs and recently played music.
+                </p>
+
+            </div>
+
+            <div class="library-tabs">
+
+                <button
+                    class="library-tab active"
+                    data-library="liked"
+                    type="button">
+                    ♡ Liked Songs
+                </button>
+
+                <button
+                    class="library-tab"
+                    data-library="recent"
+                    type="button">
+                    ◷ Recently Played
+                </button>
+
+            </div>
+
+            <div class="library-content"
+                 id="libraryContent">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         HIDDEN AUDIO PLAYER
+    ====================================================== -->
+
+    <audio
+        id="audioPlayer"
+        preload="metadata">
+    </audio>
+
+
+    <!-- =====================================================
+         BOTTOM PLAYER
+    ====================================================== -->
+
+    <footer class="player">
+
+        <div class="current-song">
+
+            <div class="player-cover-wrapper">
+
+                <img
+                    id="playerCover"
+                    src=""
+                    alt="Current song">
+
+                <div class="playing-bars"
+                     id="playingBars">
+
+                    <i></i>
+                    <i></i>
+                    <i></i>
+
+                </div>
+
+            </div>
+
+            <div class="current-song-info">
+
+                <h3 id="playerTitle">
+                    Select a song
+                </h3>
+
+                <p id="playerArtist">
+                    Search music to start
+                </p>
+
+            </div>
+
+            <button
+                class="like-btn"
+                id="likeBtn"
+                type="button">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="player-center">
+
+            <div class="player-controls">
+
+                <button
+                    class="control-btn"
+                    id="shuffleBtn"
+                    type="button">
+                    ⤨
+                </button>
+
+                <button
+                    class="control-btn"
+                    id="previousBtn"
+                    type="button">
+                    ⏮
+                </button>
+
+                <button
+                    class="play-btn"
+                    id="playBtn"
+                    type="button">
+                    ▶
+                </button>
+
+                <button
+                    class="control-btn"
+                    id="nextBtn"
+                    type="button">
+                    ⏭
+                </button>
+
+                <button
+                    class="control-btn"
+                    id="repeatBtn"
+                    type="button">
+                    ↻
+                </button>
+
+            </div>
+
+
+            <div class="progress-area">
+
+                <span id="currentTime"
+                      class="time">
+                    0:00
+                </span>
+
+                <input
+                    type="range"
+                    id="progressBar"
+                    min="0"
+                    max="100"
+                    value="0"
+                    step="0.1">
+
+                <span id="duration"
+                      class="time">
+                    0:00
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="player-right">
+
+            <button
+                class="volume-button"
+                id="volumeBtn"
+                type="button">
+                🔊
+            </button>
+
+            <input
+                type="range"
+                id="volumeBar"
+                min="0"
+                max="100"
+                value="80"
+                step="1">
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div class="toast"
+     id="toast">
+
+    <span id="toastMessage">
+        Ready
+    </span>
+
+</div>
+
+
+<!-- LOADING -->
+
+<div class="loading-overlay"
+     id="loadingOverlay">
+
+    <div class="loading-spinner"></div>
+
+    <p>
+        Loading music...
+    </p>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
