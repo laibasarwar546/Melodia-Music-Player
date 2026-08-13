@@ -51,7 +51,7 @@ Using a Browser
 You can also open index.html directly in a modern web browser.
 
 Clone from GitHub
-git clone https://github.com/laibasarwar546/melodia.git
+git clone https://github.com/laibasarwar546/Melodia-Music-Player.git
 
 No backend setup or API key is required.
 
