@@ -1,6 +1,10 @@
-# 🎵 Melodia
+# 🎵 Melodia Music Player
 
-A modern, responsive music streaming web application inspired by popular music player interfaces. Melodia allows users to search for songs and artists, play music previews, manage liked songs, view recently played tracks, and switch between dark and light themes.
+A modern, responsive music player web application built with HTML, CSS, and JavaScript. Melodia allows users to search for songs and artists, listen to music previews, manage liked songs, view recently played tracks, and enjoy a clean Spotify-inspired interface.
+
+## 🌐 Live Demo
+
+[🎵 Open Melodia Music Player]https://laibasarwar546.github.io/Melodia-Music-Player/
 
 ## ✨ Features
 
@@ -14,8 +18,8 @@ A modern, responsive music streaming web application inspired by popular music p
 - 📚 Liked songs library
 - 🕘 Recently played songs
 - 🔊 Volume control
-- 🔇 Mute/unmute
-- 🎚️ Music progress and seeking
+- 🔇 Mute and unmute
+- 🎚️ Music progress bar and seeking
 - 🌙 Dark and light themes
 - 📱 Responsive design
 - ⌨️ Keyboard controls
@@ -23,51 +27,95 @@ A modern, responsive music streaming web application inspired by popular music p
 
 ## 🛠️ Technologies Used
 
-HTML5 • CSS3 • JavaScript • Apple iTunes Search API • HTML5 Audio API • Local Storage
+- HTML5
+- CSS3
+- JavaScript
+- Apple iTunes Search API
+- HTML5 Audio API
+- LocalStorage
 
 ## 🔌 API
 
-Melodia uses the **Apple iTunes Search API** to search for music and retrieve song information, artwork, and available audio previews. No YouTube API is used, and no API key is required.
+Melodia uses the **Apple iTunes Search API** to search for music and retrieve:
+
+- Song information
+- Artist information
+- Album artwork
+- Audio previews
+
+No YouTube API is used, and no API key is required.
 
 ## 📂 Project Structure
 
-
-Melodia
+Melodia-Music-Player/
+│
 ├── index.html
 ├── style.css
 ├── script.js
 └── README.md
 🚀 How to Run
-Using VS Code
-Download or clone the repository.
-Open the Melodia folder in Visual Studio Code.
-Make sure index.html, style.css, and script.js are in the same folder.
+Option 1 — Live Demo
+
+Simply open the live website:
+
+https://laibasarwar546.github.io/Melodia-Music-Player/
+
+Option 2 — Run Using VS Code
+Download or clone this repository.
+Open the project folder in Visual Studio Code.
+Make sure these files are in the same folder:
+index.html
+style.css
+script.js
 Install the Live Server extension in VS Code.
 Right-click index.html.
 Select Open with Live Server.
 Melodia will open automatically in your browser.
-Using a Browser
-
-You can also open index.html directly in a modern web browser.
-
-Clone from GitHub
+Option 3 — Clone from GitHub
 git clone https://github.com/laibasarwar546/Melodia-Music-Player.git
+
+Then open the project folder in VS Code and run index.html using Live Server.
 
 No backend setup or API key is required.
 
 💾 Local Storage
 
-Melodia uses browser LocalStorage to save liked songs, recently played songs, and the selected theme. These preferences remain available after refreshing the page.
+Melodia uses browser LocalStorage to save:
+
+❤️ Liked songs
+🕘 Recently played songs
+🌙 Selected theme
+
+These preferences remain available after refreshing the page.
 
 🎧 How It Works
 
-Users search for a song or artist through the search bar. Melodia fetches matching results from the Apple iTunes Search API and displays them as interactive song cards. Selecting a song loads its available preview into the built-in audio player. When a song finishes, the player automatically continues with the next song in the current queue.
+Users search for a song or artist using the search bar. Melodia sends the search request to the Apple iTunes Search API and displays the matching songs.
 
+When a user selects a song, its available audio preview is loaded into the built-in HTML5 audio player.
+
+When the current preview finishes, Melodia automatically continues playing the next song in the current queue.
+
+🎨 Interface
+
+Melodia includes:
+
+Modern music-player layout
+Sidebar navigation
+Search interface
+Song cards
+Bottom music player
+Full now-playing section
+Library section
+Dark/light theme
+Responsive layout
 👩‍💻 Developer
 
 Laiba Sarwar
 
 GitHub: https://github.com/laibasarwar546
+
+Repository: https://github.com/laibasarwar546/Melodia-Music-Player
 
 📄 License
 
