@@ -4,7 +4,7 @@ A modern, responsive music player web application built with HTML, CSS, and Java
 
 ## 🌐 Live Demo
 
-[🎵 Open Melodia Music Player]https://laibasarwar546.github.io/Melodia-Music-Player/
+[🎵 Open Melodia Music Player]https://melodia-music-player-plum.vercel.app/
 
 ## ✨ Features
 
